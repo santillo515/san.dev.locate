@@ -99,7 +99,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </li>
-          <li class="nav-item">
+        <li class="nav-item">
+            <router-link to="/developer" class="nav-link">
+                <i class="nav-icon fas fa-cogs"></i>
+                <p>
+                Разработчик
+                </p>
+            </router-link>
+		</li>
+		<li class="nav-item">
             <router-link to="/profile" class="nav-link">
                 <i class="nav-icon fas fa-user orange"></i>
                 <p>
@@ -117,7 +125,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
+                @csrf &nbsp;
             </form>
         </li>
         </ul>
@@ -132,7 +140,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main content -->
         <div class="content">
             <div class="container-fluid">
-                <router-view></router-view>
+                <router-view></router-view> &nbsp;
+                <vue-progress-bar></vue-progress-bar>
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content -->
