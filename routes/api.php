@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +17,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Route::middleware(['auth:api'])->group(function () {
+//     Route::apiResources(['User' => 'Api\UserController']);
+//     Route::get('profile','Api\UserController@profile');
+//     Route::put('profile','Api\UserController@updateProfile');
+// });
+
 Route::apiResources(['user' => 'Api\UserController']);
+Route::get('profile', 'Api\UserController@profile');
+Route::get('calculator', 'Api\UserController@calcTime');
+Route::get('findUser', 'Api\UserController@search');
+Route::put('profile', 'Api\UserController@updateProfile');
